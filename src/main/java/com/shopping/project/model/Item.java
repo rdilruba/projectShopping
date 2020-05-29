@@ -1,5 +1,7 @@
 package com.shopping.project.model;
 
+import com.shopping.project.enums.ItemType;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,9 +12,20 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String itemType;
-    private Double price;
+    private ItemType itemType;
+    private double price;
     private String name;
+    private String imgUrl;
+
+    public Item() {
+    }
+
+    public Item(ItemType itemType, double price, String name, String imgUrl) {
+        this.itemType = itemType;
+        this.price = price;
+        this.name = name;
+        this.imgUrl = imgUrl;
+    }
 
     public Long getId() {
         return id;
@@ -22,11 +35,11 @@ public class Item {
         this.id = id;
     }
 
-    public String getItemType() {
+    public ItemType getItemType() {
         return itemType;
     }
 
-    public void setItemType(String itemType) {
+    public void setItemType(ItemType itemType) {
         this.itemType = itemType;
     }
 
@@ -44,5 +57,13 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }
