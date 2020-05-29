@@ -69,4 +69,12 @@ public class Product {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
+
+    public int getSoldCount() {
+        return soldCount;
+    }
+
+    public void setSoldCount(int soldCount) {
+        this.soldCount = soldCount;
+    }
 }
