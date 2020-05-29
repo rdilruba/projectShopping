@@ -1,30 +1,33 @@
-package com.shopping.project.model;
+package com.shopping.project.entities;
 
-import com.shopping.project.enums.ItemType;
+import com.shopping.project.enums.ProductType;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "items")
-public class Item {
+@Table(name = "products")
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private ItemType itemType;
+    private ProductType productType;
     private double price;
     private String name;
     private String imgUrl;
+    private int soldCount;
 
-    public Item() {
+    public Product() {
+        this.soldCount = 0;
     }
 
-    public Item(ItemType itemType, double price, String name, String imgUrl) {
-        this.itemType = itemType;
+    public Product(ProductType productType, double price, String name, String imgUrl) {
+        this.productType = productType;
         this.price = price;
         this.name = name;
         this.imgUrl = imgUrl;
+        this.soldCount = 0;
     }
 
     public Long getId() {
@@ -35,12 +38,12 @@ public class Item {
         this.id = id;
     }
 
-    public ItemType getItemType() {
-        return itemType;
+    public ProductType getProductType() {
+        return productType;
     }
 
-    public void setItemType(ItemType itemType) {
-        this.itemType = itemType;
+    public void setProductType(ProductType productType) {
+        this.productType = productType;
     }
 
     public Double getPrice() {

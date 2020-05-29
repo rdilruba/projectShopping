@@ -1,6 +1,6 @@
 package com.shopping.project.enums;
 
-public enum ItemType {
+public enum ProductType {
     MUSIC,
     CLOTHING,
     FURNITURE,
