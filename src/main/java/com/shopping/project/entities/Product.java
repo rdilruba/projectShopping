@@ -70,5 +70,11 @@ public class Product {
         this.imgUrl = imgUrl;
     }
 
+    public int getSoldCount() {
+        return soldCount;
+    }
 
+    public void setSoldCount(int soldCount) {
+        this.soldCount = soldCount;
+    }
 }
