@@ -88,6 +88,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
 
                 .antMatchers("/auth/**").permitAll()
+                .antMatchers("/products/**").permitAll()
                 .antMatchers("/shop/**").
                 hasAnyAuthority("ROLE_customer", "customer", "[customer]")
                 .anyRequest().authenticated();

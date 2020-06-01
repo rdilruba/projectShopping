@@ -1,6 +1,7 @@
 package com.shopping.project.controller;
 
 import com.shopping.project.entities.Product;
+import com.shopping.project.enums.ProductType;
 import com.shopping.project.services.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,5 +33,10 @@ public class ProductController {
     @GetMapping("")
     public @ResponseBody ResponseEntity<List<Product>> getAllProducts() {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
+    }
+
+    @GetMapping("")
+    public @ResponseBody ResponseEntity<List<Product>> getProductsOfType(@RequestBody ProductType productType) {
+        return new ResponseEntity<>(productService.getAllProductsType(productType), HttpStatus.OK);
     }
 }
