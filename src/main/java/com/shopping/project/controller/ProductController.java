@@ -35,8 +35,8 @@ public class ProductController {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
 
-    @GetMapping("")
-    public @ResponseBody ResponseEntity<List<Product>> getProductsOfType(@RequestBody ProductType productType) {
+    @GetMapping("/{productType}")
+    public @ResponseBody ResponseEntity<List<Product>> getProductsOfType(@PathVariable ProductType productType) {
         return new ResponseEntity<>(productService.getAllProductsType(productType), HttpStatus.OK);
     }
 }
