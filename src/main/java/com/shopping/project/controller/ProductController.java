@@ -35,8 +35,9 @@ public class ProductController {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
     }
 
-    @GetMapping("/{productType}")
-    public @ResponseBody ResponseEntity<List<Product>> getProductsOfType(@PathVariable ProductType productType) {
+    @GetMapping("/category/{categoryId}")
+    public @ResponseBody ResponseEntity<List<Product>> getProductsOfType(@PathVariable int categoryId) {
+        ProductType productType = ProductType.values()[categoryId];
         return new ResponseEntity<>(productService.getAllProductsType(productType), HttpStatus.OK);
     }
 }
