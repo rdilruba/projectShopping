@@ -62,7 +62,7 @@ public class AuthenticationController {
         User loggedInUser = userService.findByUsername(username);
         Map<String, Object> body = new HashMap<>();
         body.put("Authorization", "Bearer " + jwtToken);
-        body.put("Worker", loggedInUser);
+        body.put("User", loggedInUser);
         return new ResponseEntity<>(body, HttpStatus.OK);
     }
 
