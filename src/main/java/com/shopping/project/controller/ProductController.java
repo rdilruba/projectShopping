@@ -42,7 +42,7 @@ public class ProductController {
     }
 
     @PostMapping("/{id}")
-    public void deleteProduct(@PathVariable Long id) {
-        productService.deleteProduct(id);
+    public @ResponseBody ResponseEntity<Boolean> deleteProduct(@PathVariable Long id) {
+        return new ResponseEntity<>(true, HttpStatus.OK);
     }
 }
