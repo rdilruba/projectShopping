@@ -40,4 +40,9 @@ public class ProductController {
         ProductType productType = ProductType.values()[categoryId];
         return new ResponseEntity<>(productService.getAllProductsType(productType), HttpStatus.OK);
     }
+
+    @PostMapping("/{id}")
+    public void deleteProduct(@PathVariable Long id) {
+        productService.deleteProduct(id);
+    }
 }

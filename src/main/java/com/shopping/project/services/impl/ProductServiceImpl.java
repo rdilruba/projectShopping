@@ -37,4 +37,9 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getAllProductsType(ProductType productType) {
         return productRepository.findAllByProductType(productType);
     }
+
+    @Override
+    public void deleteProduct(Long id) {
+        productRepository.deleteProductById(id);
+    }
 }
